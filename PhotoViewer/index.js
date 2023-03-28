@@ -15,7 +15,8 @@ export default class PhotoViewer extends Component {
     onClose: () => {},
   };
 
-  componentWillMount() {
+  constructor(props) {
+    super(props);
     this.animatedValue = new Animated.Value(0);
   }
 
@@ -26,6 +27,7 @@ export default class PhotoViewer extends Component {
         toValue: 1,
         duration: 400,
         easing: Easing.in,
+        useNativeDriver: false,
       }
     ).start();
   }
